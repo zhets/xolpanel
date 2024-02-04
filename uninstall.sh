@@ -2,6 +2,7 @@
 
 SYSTEM=systemctl
 BOT=/etc/xdxl
+xd=xolpanel
 
 if [ `id -u` != "0" ]; then
     echo "Error at uninstallation, please run uninstaller as root"
@@ -9,16 +10,15 @@ if [ `id -u` != "0" ]; then
 fi
 
 echo "Uninstalling Bot create SSH..."
-if [ -f /etc/systemd/system/xolpanel.service ]; then
-    $SYSTEM stop xolpanel.service
-    $SYSTEM disable xolpanel.service
-    rm $SYSTEM/xolpanel.service
+if [ -f /etc/systemd/system/$xd.service ]; then
+    $SYSTEM stop $xd
+    $SYSTEM disable $xd
+    rm $SYSTEM/$xd.sevice
     $SYSTEM daemon-reload
 fi
-if [ -f $BOT/xolpanel ]; then
-    rm -r $BOT/xolpanel
+if [ -d $BOT/$xd ]; then
+    rm -rf $BOT/$xd
 fi
-if [ -d $CONFIGS ]; then
-    rm -rf $CONFIGS
-fi
+clear
+echo -e ""
 echo "Uninstall Bot create SSH completed"￼
