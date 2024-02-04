@@ -22,3 +22,4 @@ fi
 clear
 echo -e ""
 echo "Uninstall Bot create SSH completed"￼
+rm -rf /root/uninstall.sh
