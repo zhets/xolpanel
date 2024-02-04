@@ -16,14 +16,12 @@ async def trial_ssh(event):
 			later = today + DT.timedelta(days=int(exp))
 			msg = f"""
 **━━━━━━━━━━━━━━━━**
-**⟨ JOE OVPN ACCOUNT ⟩**
+**⟨ SSH OVPN ACCOUNT ⟩**
 **━━━━━━━━━━━━━━━━**
-**» IP Domain:** `{DOMAIN}`
-**» NS Domain:** `{SLDOMAIN}`
-**» Pubkey:** `7fbd1f8aa0abfe15a7903e837f78aba39cf61d36f183bd604daa2fe4ef3b7b59`
 **» Username:** `{user.strip()}`
 **» Password:** `{pw.strip()}`
 **━━━━━━━━━━━━━━━━**
+**» Host/IP:** `{DOMAIN}`
 **» OpenSSH:** `22`
 **» SSL/TLS:** `222`, `777`, `443`
 **» Dropbear:** `109`,`143`
@@ -36,15 +34,16 @@ async def trial_ssh(event):
 **⟨ Payload WS CDN ⟩**
 `GET / HTTP/1.1[crlf]Host: {DOMAIN}[crlf]Connection: Keep-Alive[crlf]User-Agent: [ua][crlf]Upgrade: websocket[crlf][crlf]`
 **━━━━━━━━━━━━━━━━**
-**» SSH UNLOCK:** {DOMAIN}:80@{user.strip()}:{pw.strip()}
+**» Example SSH 80:** `{DOMAIN}:80@{user.strip()}:{pw.strip()}`
+**» Example SSH 443:** `{DOMAIN}:443@{user.strip()}:{pw.strip()}`
+**» Example SSH UDP:** {DOMAIN}:1-65535@{user.strip()}:{pw.strip()}
 **━━━━━━━━━━━━━━━━**
 **» 🗓Expired Until:** `{later}`
-**» 🤖@Lemontreee3**
+**» 🤖@xdxl_store**
 **━━━━━━━━━━━━━━━━**
 """
 			inline = [
-[Button.url("[ Contact ]","t.me/Lemontreee3"),
-Button.url("[ Whatsapp ]","wa.me/62882003753308")]]
+[Button.inline(" Back To Menu ","menu")]]
 			await event.respond(msg,buttons=inline)
 	chat = event.chat_id
 	sender = await event.get_sender()
