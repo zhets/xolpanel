@@ -4,22 +4,22 @@ from xolpanel import *
 async def ssh(event):
 	async def ssh_(event):
 		inline = [
-[Button.inline("[ TRIAL SSH ]","trial-ssh"),
-Button.inline("[ CREATE SSH ]","create-ssh")],
-[Button.inline("[ DELETE SSH ]","delete-ssh"),
-Button.inline("[ CHECK Login SSH ]","login-ssh")],
-[Button.inline("[ SHOW ALL USER SSH ]","show-ssh")],
-[Button.inline("‹ MAIN MENU ›","menu")]]
+[Button.inline(" ᴛʀɪᴀʟ ꜱꜱʜ ","trial-ssh"),
+Button.inline(" ᴄʀᴇᴀᴛᴇ ꜱꜱʜ ","create-ssh")],
+[Button.inline(" ᴅᴇʟᴇᴛᴇ ꜱꜱʜ ","delete-ssh"),
+Button.inline(" ᴄʜᴇᴄᴋ ꜱꜱʜ ","login-ssh")],
+[Button.inline(" ᴍᴇᴍʙᴇʀ ꜱꜱʜ ","show-ssh")],
+[Button.inline("‹ ᴍᴀɪɴ ᴍᴇɴᴜ ›","menu")]]
 		z = requests.get(f"http://ip-api.com/json/?fields=country,region,city,timezone,isp").json()
 		msg = f"""
 **━━━━━━━━━━━━━━━━**
-**⟨ SSH Menu ⟩**
+  **⟨ ⚡SSH MENU⚡ ⟩**
 **━━━━━━━━━━━━━━━━**
 **» Service:** `SSH`
-**» Hostname/IP:** `{DOMAIN}`
+**» Host/IP:** `{DOMAIN}`
 **» ISP:** `{z["isp"]}`
 **» Country:** `{z["country"]}`
-**» 🤖@Lemontreee3**
+**» 🤖@xdxl_store**
 **━━━━━━━━━━━━━━━━**
 """
 		await event.edit(msg,buttons=inline)
