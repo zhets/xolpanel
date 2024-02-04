@@ -3,7 +3,7 @@ from xolpanel import *
 @bot.on(events.CallbackQuery(data=b'login-ssh'))
 async def login_ssh(event):
 	async def login_ssh_(event):
-		x = subprocess.check_output('bash xolpanel/cek.sh',shell=True).decode("ascii")
+		x = subprocess.check_output('bash /etc/xdxl/xolpanel/cek.sh',shell=True).decode("ascii")
 		date = DT.date.now()
 		text2png(u"%s" % x, 'login.png', fontfullpath = "xolpanel/font.ttf")
 		await event.respond(f"""
