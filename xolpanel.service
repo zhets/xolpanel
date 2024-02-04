@@ -3,8 +3,8 @@ Description=XolPanel - @XolPanel
 After=network.target
 
 [Service]
-WorkingDirectory=/root
-ExecStart=/usr/bin/python3 -m /root/xolpanel
+WorkingDirectory=/etc/xdxl
+ExecStart=python3 -m xolpanel
 Restart=always
 
 [Install]
