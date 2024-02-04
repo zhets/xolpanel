@@ -1,4 +1,14 @@
 #!/bin/bash
+# ================================
+# // Arthur : XDXL STORE
+# // From : North Lampung ( Indonesia )
+# // Channel : t.me/xdxl_vpn
+# // Group : t.me/vpn_storeid
+# // Contact : t.me/xdxl_store
+# ==================================
+# Note :
+# Jangan lupa makan buat yg colong bot nya hehe
+
 domain=$(cat /etc/xray/domain)
 SYSTEM=systemctl
 SYSTEMD=/etc/systemd/system
@@ -17,7 +27,7 @@ fi
 apt update && apt upgrade -y
 apt install python3 python3-pip -y
 apt install sqlite3 -y
-cd /etc/xdxl
+cd $bot
 git clone https://github.com/zhets/${xd}.git
 cd $xd
 rm install.sh uninstall.sh
