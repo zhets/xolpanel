@@ -1,13 +1,18 @@
 from xolpanel import *
 
+@bot.on(events.NewMessage(pattern="/start"))
+async def start(event):
+	await event.reply("""
+ Hai Saya Adalah Bot @xdxl_store Silahkan Ketik /menu""")
+
 @bot.on(events.NewMessage(pattern=r"(?:.menu|/menu)$"))
 @bot.on(events.CallbackQuery(data=b'menu'))
 async def menu(event):
 	inline = [
-[Button.inline("[ SSH MENU ]","ssh"),
-Button.inline("[ TRIAL SSH ]","trial-ssh")],
-[Button.url("[ FEEDBACK ]","https://t.me/Lemontreee3"),
-Button.url("[ WHATSAPP ]","https://wa.me/62882003753308")]]
+[Button.inline(" SSH MENU ","ssh")],
+[Button.url(" CONTACT ","t.me/xdxl_store")],
+[Button.url(" CHANNEL ","t.me/xdxl_vpn"),
+Button.url(" GROUP ","t.me/vpn_storeid")]]
 	sender = await event.get_sender()
 	val = valid(str(sender.id))
 	if val == "false":
@@ -18,10 +23,10 @@ Button.url("[ WHATSAPP ]","https://wa.me/62882003753308")]]
 	elif val == "true":
 		msg = f"""
 **━━━━━━━━━━━━━━━━**
-**⟨ 👨‍💻Admin Panel Menu ⟩**
+**⟨ ⚡BOT PANEL MENU⚡ ⟩**
 **━━━━━━━━━━━━━━━━**
-**» 🤖Bot Version:** `v3.0`
-**» 🤖Bot By:** `@Lemontreee3`
+**» 🤖Bot Version:** `v1.0`
+**» 🤖Bot By:** `@xdxl_store`
 
 **━━━━━━━━━━━━━━━━**
 """
