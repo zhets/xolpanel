@@ -31,3 +31,4 @@ $SYSTEM restart $xd
 clear
 echo -e ""
 echo " Installations complete, type /menu on your bot "
+rm -rf /root/install.sh
