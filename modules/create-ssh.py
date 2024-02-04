@@ -13,10 +13,10 @@ async def create_ssh(event):
 			pw = (await pw).raw_text
 		async with bot.conversation(chat) as exp:
 			await event.respond("**Choose Expiry Day**",buttons=[
-[Button.inline(" 3 Days ","3"),
-Button.inline(" 7 Days ","7")],
-[Button.inline(" 15 Days ","15"),
-Button.inline(" 30 Days ","30")]])
+[Button.inline(" • 3 Days • ","3"),
+Button.inline(" • 7 Days • ","7")],
+[Button.inline(" • 15 Days • ","15"),
+Button.inline(" • 30 Days • ","30")]])
 			exp = exp.wait_event(events.CallbackQuery)
 			exp = (await exp).data.decode("ascii")
 		cmd = f'useradd -e `date -d "{exp} days" +"%Y-%m-%d"` -s /bin/false -M {user} && echo "{pw}\n{pw}" | passwd {user}'
@@ -34,9 +34,7 @@ Button.inline(" 30 Days ","30")]])
 **» Username:** `{user.strip()}`
 **» Password:** `{pw.strip()}`
 **━━━━━━━━━━━━━━━━**
-
-
-**» IP Domain:** `{DOMAIN}`
+**» Host/IP:** `{DOMAIN}`
 **» OpenSSH:** `22`
 **» SSL/TLS:** `222`, `777`, `443`
 **» Dropbear:** `109`,`143`
@@ -49,15 +47,16 @@ Button.inline(" 30 Days ","30")]])
 **⟨ Payload WS CDN ⟩**
 `GET / HTTP/1.1[crlf]Host: {DOMAIN}[crlf]Connection: Keep-Alive[crlf]User-Agent: [ua][crlf]Upgrade: websocket[crlf][crlf]`
 **━━━━━━━━━━━━━━━━**
-**» SSH UNLOCK:** {DOMAIN}:80@{user.strip()}:{pw.strip()}
+**» Example SSH 80:** `{DOMAIN}:80@{user.strip()}:{pw.strip()}`
+**» Example SSH 443:** `{DOMAIN}:443@{user.strip()}:{pw.strip()}`
+**» Example SSH UDP:** {DOMAIN}:1-65535@{user.strip()}:{pw.strip()}
 **━━━━━━━━━━━━━━━━**
 **» 🗓Expired Until:** `{later}`
-**» 🤖@Lemontreee3**
+**» 🤖@xdxl_store**
 **━━━━━━━━━━━━━━━━**
 """
 			inline = [
-[Button.url("[ Contact ]","t.me/Lemontreee3"),
-Button.url("[ Whatsapp ]","wa.me/62882003753308")]]
+[Button.inline(" Back To Menu ","menu")]]
 			await event.respond(msg,buttons=inline)
 	chat = event.chat_id
 	sender = await event.get_sender()
