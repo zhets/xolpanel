@@ -13,10 +13,10 @@ async def create_ssh(event):
 			pw = (await pw).raw_text
 		async with bot.conversation(chat) as exp:
 			await event.respond("**Choose Expiry Day**",buttons=[
-[Button.inline(" 7 Day ","7"),
-Button.inline(" 15 Day ","15")],
-[Button.inline(" 30 Day ","30"),
-Button.inline(" Lifetime ","500")]])
+[Button.inline(" 3 Days ","3"),
+Button.inline(" 7 Days ","7")],
+[Button.inline(" 15 Days ","15"),
+Button.inline(" 30 Days ","30")]])
 			exp = exp.wait_event(events.CallbackQuery)
 			exp = (await exp).data.decode("ascii")
 		cmd = f'useradd -e `date -d "{exp} days" +"%Y-%m-%d"` -s /bin/false -M {user} && echo "{pw}\n{pw}" | passwd {user}'
@@ -29,14 +29,14 @@ Button.inline(" Lifetime ","500")]])
 			later = today + DT.timedelta(days=int(exp))
 			msg = f"""
 **━━━━━━━━━━━━━━━━**
-**⟨ JOE OVPN ACCOUNT ⟩**
+**⟨ SSH OVPN ACCOUNT ⟩**
 **━━━━━━━━━━━━━━━━**
-**» IP Domain:** `{DOMAIN}`
-**» NS Domain:** `{SLDOMAIN}`
-**» Pub-Key:** `7fbd1f8aa0abfe15a7903e837f78aba39cf61d36f183bd604daa2fe4ef3b7b59`
 **» Username:** `{user.strip()}`
 **» Password:** `{pw.strip()}`
 **━━━━━━━━━━━━━━━━**
+
+
+**» IP Domain:** `{DOMAIN}`
 **» OpenSSH:** `22`
 **» SSL/TLS:** `222`, `777`, `443`
 **» Dropbear:** `109`,`143`
