@@ -1,0 +1,5 @@
+BOT_TOKEN="6180229778:AAG7WeXV_NG85EkyC35d7ow9JSab-Jjn_wE" # get this value from @BotFather, required
+ADMIN="838931461" # your telegram ID, required
+DOMAIN="vipme.my.id" # your VPS domain, required
+SLDOMAIN="vipme.my.id" # your VPS domain, required
+
